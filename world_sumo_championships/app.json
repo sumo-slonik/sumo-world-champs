@@ -31,7 +31,7 @@
       "output": "static",
       "favicon": "./assets/images/favicon.png",
       "config": {
-        "googleMapsApiKey": "AIzaSyC8P1BEj2XPEyOB_vEaNCpxmlmEn91vdMs"
+        "googleMapsApiKey": "temporary change"
       }
     },
     "plugins": [
