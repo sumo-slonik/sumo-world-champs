@@ -19,12 +19,20 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
+      },
+      "config": {
+        "googleMaps": {
+          "apiKey": "AIzaSyC8P1BEj2XPEyOB_vEaNCpxmlmEn91vdMs"
+        }
       }
     },
     "web": {
       "bundler": "metro",
       "output": "static",
-      "favicon": "./assets/images/favicon.png"
+      "favicon": "./assets/images/favicon.png",
+      "config": {
+        "googleMapsApiKey": "AIzaSyC8P1BEj2XPEyOB_vEaNCpxmlmEn91vdMs"
+      }
     },
     "plugins": [
       "expo-router"
