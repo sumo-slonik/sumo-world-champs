@@ -3,7 +3,6 @@ import {View, Text, StyleSheet} from 'react-native'
 export const styles = StyleSheet.create({
     defaultBackground: {
         backgroundColor: "#E1AD9C",
-        // backgroundColor: "#B87F70",
         flex: 1
     },
     headerTextStyle: {
@@ -26,7 +25,15 @@ export const styles = StyleSheet.create({
         textAlign: 'center',
         fontSize: 30,
         fontFamily: 'Roboto-Regular',
-    }
-
-
+    },
+    mapStyle: {
+        justifyContent: 'center',
+        alignItems: 'center',
+        borderColor: "#2C130E",
+        borderRadius: 3,
+        borderWidth: 1,
+        backgroundColor: "#2C130E",
+        padding: 1,
+        elevation: 5
+    },
 })

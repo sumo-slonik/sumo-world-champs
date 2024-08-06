@@ -7,9 +7,14 @@ import {MyMap} from "@/components/custom_components/mapComponent";
 export const CompetitionInfoScreen =() => {
     return (
         <View style={[styles.defaultBackground]}>
-            <Text> competitionInfo</Text>
-            <MyMap></MyMap>
+            <View style={[styles.defaultBackground, {flex: 3}]}>
+                <MyMap></MyMap>
+            </View>
+            <View style={[styles.defaultBackground, {flex: 2}]}>
 
+            </View>
         </View>
+
+
     );
 };

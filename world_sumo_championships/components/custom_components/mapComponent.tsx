@@ -1,6 +1,8 @@
 import React, {useRef, useState} from 'react';
 import {Dimensions, View} from 'react-native';
 import MapView, {PROVIDER_GOOGLE} from "react-native-maps";
+import {inspect} from "util";
+import {styles} from "@/components/custom_components/myStyles";
 
 export const MyMap = () => {
 
@@ -46,15 +48,17 @@ export const MyMap = () => {
     }
 
   return (
-      <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-          <MapView
-          ref={mapRef}
-          provider={PROVIDER_GOOGLE}
-          style={{width: '100%', height: '100%'}}
-          region={region}
-          onRegionChangeComplete={handleChangeOfRegion}
-          // zoomEnabled={false}
-          />
+      <View style={{padding: 20}}>
+          <View style={[styles.mapStyle]}>
+            <MapView
+                ref={mapRef}
+                provider={PROVIDER_GOOGLE}
+                style={{width: '100%', height: '100%'}}
+                region={region}
+                onRegionChangeComplete={handleChangeOfRegion}
+            // zoomEnabled={false}
+            />
+          </View>
       </View>
   );
 };
