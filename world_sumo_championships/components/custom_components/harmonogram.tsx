@@ -12,12 +12,14 @@ export const myHarmonogram = () =>{
     );
 
     return (
-        <View>
-            <FlatList>
+        <View style={{flex: 1, justifyContent: 'center', alignItems: 'center',}}>
+            <FlatList
                 data={data}
                 renderItem={renderItem}
-
-            </FlatList>
+                keyExtractor={item => item.id}
+                ListEmptyComponent={<Text> Brak danych</Text>}
+                contentContainerStyle={{paddingVertical: 20}}
+            />
         </View>
     );
 };
