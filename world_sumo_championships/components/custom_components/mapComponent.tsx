@@ -1,10 +1,10 @@
-import React, {useRef, useState} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import {Dimensions, View} from 'react-native';
-import MapView, {PROVIDER_GOOGLE} from "react-native-maps";
+import MapView, {Marker, PROVIDER_GOOGLE} from "react-native-maps";
 import {inspect} from "util";
 import {styles} from "@/components/custom_components/myStyles";
 
-export const MyMap = () => {
+export const MyMap = ({markersData, selectedId, setSelectedId}) => {
 
     const mapRef = useRef(null);
 
@@ -26,6 +26,26 @@ export const MyMap = () => {
     })
 
     const minZoomLevel = 0.1;
+
+    const handleMarkerPress = (id) =>{
+        console.log('Marker id: ',id);
+        console.log('Selected id: ',selectedId);
+        console.log(id === selectedId);
+        if (selectedId === id){
+            setSelectedId(null);
+        }
+        else {
+            setSelectedId(id);
+            // console.log('Marker pressed:', id);
+        }
+    }
+
+    useEffect(() => {
+        // console.log("Selected Marker ID:", selectedId);
+        if (mapRef.current) {
+            mapRef.current.animateToRegion(region, 1000); // Wymuś aktualizację mapy
+        }
+    }, [selectedId]);
 
     const handleChangeOfRegion = (newRegion) =>{
         if (newRegion.longitude > mapBoundaries.northEast.longitude){
@@ -50,14 +70,24 @@ export const MyMap = () => {
   return (
       <View style={{padding: 20}}>
           <View style={[styles.mapStyle]}>
-            <MapView
-                ref={mapRef}
-                provider={PROVIDER_GOOGLE}
-                style={{width: '100%', height: '100%'}}
-                region={region}
-                onRegionChangeComplete={handleChangeOfRegion}
-            // zoomEnabled={false}
-            />
+              <MapView
+                  ref={mapRef}
+                  provider={PROVIDER_GOOGLE}
+                  style={{width: '100%', height: '100%'}}
+                  region={region}
+                  onRegionChangeComplete={handleChangeOfRegion}
+              >
+                  {markersData.map((marker) => (
+
+                      <Marker
+                          key={`${marker.id}-${marker.id === selectedId ? 'active' : 'inactive'}`}
+                          coordinate={marker.coordinates}
+                          // title={marker.eventName}
+                          onPress={() => handleMarkerPress(marker.id)}
+                          pinColor={marker.id === selectedId ? 'tan' : 'red'}
+                      />
+                  ))}
+              </MapView>
           </View>
       </View>
   );

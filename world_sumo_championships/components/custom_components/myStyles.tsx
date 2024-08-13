@@ -36,4 +36,36 @@ export const styles = StyleSheet.create({
         padding: 1,
         elevation: 5
     },
+    harmonogramStyle: {
+        justifyContent: 'center',
+        borderColor: "#2C130E",
+        borderRadius: 3,
+        borderWidth: 1,
+        backgroundColor: "#931807",
+        padding: 10,
+        marginVertical: 1
+
+
+    },
+    chosenHarmonogramStyle: {
+        justifyContent: 'center',
+        borderColor: "black",
+        borderRadius: 3,
+        borderWidth: 1,
+        backgroundColor: "#2C130E",
+        padding: 10,
+        marginVertical: 1
+    },
+    harmonogramText:{
+        borderRadius:0,
+        fontFamily: 'Roboto-Regular',
+        fontWeight: 'bold',
+        color: 'black'
+    },
+    chosenHarmonogramText: {
+        borderRadius:0,
+        fontFamily: 'Roboto-Regular',
+        fontWeight: 'bold',
+        color: "#E1AD9C"
+    }
 })

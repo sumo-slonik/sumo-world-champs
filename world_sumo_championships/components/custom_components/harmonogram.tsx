@@ -1,15 +1,23 @@
 import React from 'react';
-import {FlatList, Text, View} from "react-native";
+import {FlatList, Text, TouchableOpacity, View} from "react-native";
+import {styles} from "@/components/custom_components/myStyles";
 
 
-export const myHarmonogram = () =>{
-    const data = [];
+export const MyHarmonogram = ({data, selectedId, setSelectedId}) =>{
 
-    const renderItem = (item) => (
-        <View style={{backgroundColor: '#f9c2ff', padding: 20, marginVertical: 8, marginHorizontal: 16,}}>
-            <Text>{item.key}</Text>
-        </View>
-    );
+
+    const renderItem = ({item}) => {
+        const isSelected = item.id ===selectedId;
+        return(
+            <TouchableOpacity
+                onPress={() =>setSelectedId(item.id)}
+            >
+                <View style={[styles.harmonogramStyle, isSelected && styles.chosenHarmonogramStyle]}>
+                    <Text style={[styles.harmonogramText, isSelected && styles.chosenHarmonogramText]}>{item.eventName}</Text>
+                </View>
+            </TouchableOpacity>
+        );
+    };
 
     return (
         <View style={{flex: 1, justifyContent: 'center', alignItems: 'center',}}>
