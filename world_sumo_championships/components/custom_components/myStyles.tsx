@@ -1,20 +1,30 @@
 import {View, Text, StyleSheet} from 'react-native'
 
+export const defaultTextColor = 'white'
+export const chosenTextColor = "#E1AD9C"
+export const buttonBackgroundColor = "#931807"
+export const chosenButtonColor ="#2C130E"
+
+const basicTextColor ='black'
+
+const myFont = 'Roboto'
+
 export const styles = StyleSheet.create({
     defaultBackground: {
-        backgroundColor: "#E1AD9C",
-        flex: 1
+        backgroundColor: 'transparent',
+        flex: 1,
     },
     headerTextStyle: {
-        color: "#E1AD9C",
+        color: chosenTextColor,
         textAlign: 'center',
-        fontFamily: 'Roboto-Regular',
+        fontFamily: myFont,
         fontWeight: 'bold',
     },
     drawerMenuTextStyle: {
         borderRadius:0,
-        fontFamily: 'Roboto-Regular',
-        fontWeight: 'bold'
+        fontFamily: myFont,
+        fontWeight: 'bold',
+        color: chosenTextColor
     },
     drawerItemStyle:{
         borderTopWidth: 1,
@@ -24,26 +34,27 @@ export const styles = StyleSheet.create({
     menuNameStyle: {
         textAlign: 'center',
         fontSize: 30,
-        fontFamily: 'Roboto-Regular',
+        fontFamily: myFont,
     },
     mapStyle: {
         justifyContent: 'center',
         alignItems: 'center',
-        borderColor: "#2C130E",
+        borderColor: chosenButtonColor,
         borderRadius: 3,
         borderWidth: 1,
-        backgroundColor: "#2C130E",
+        backgroundColor: chosenButtonColor,
         padding: 1,
         elevation: 5
     },
     harmonogramStyle: {
         justifyContent: 'center',
-        borderColor: "#2C130E",
+        borderColor: chosenButtonColor,
         borderRadius: 3,
         borderWidth: 1,
-        backgroundColor: "#931807",
+        backgroundColor: buttonBackgroundColor,
         padding: 10,
-        marginVertical: 1
+        marginVertical: 1,
+        marginHorizontal: 1
 
 
     },
@@ -52,20 +63,29 @@ export const styles = StyleSheet.create({
         borderColor: "black",
         borderRadius: 3,
         borderWidth: 1,
-        backgroundColor: "#2C130E",
+        backgroundColor: chosenButtonColor,
         padding: 10,
         marginVertical: 1
     },
     harmonogramText:{
         borderRadius:0,
-        fontFamily: 'Roboto-Regular',
+        fontFamily: myFont,
         fontWeight: 'bold',
-        color: 'black'
+        color: defaultTextColor
     },
     chosenHarmonogramText: {
         borderRadius:0,
-        fontFamily: 'Roboto-Regular',
+        fontFamily: myFont,
         fontWeight: 'bold',
-        color: "#E1AD9C"
+        color: chosenTextColor
+    },
+    normalText:{
+        borderRadius:0,
+        fontFamily: myFont,
+        fontWeight: 'bold',
+        color: basicTextColor
     }
+
+
+
 })

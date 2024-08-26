@@ -2,15 +2,13 @@ import * as React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import { createDrawerNavigator } from '@react-navigation/drawer';
-
-
 import {HomeScreen} from './(tabs)/homePage';
 import {CompetitionInfoScreen} from './(tabs)/competitionInfo';
 import {SumoInfoScreen} from './(tabs)/sumoInfo';
 import {QuizScreen} from './(tabs)/quiz';
 import CustomDrawer from "@/components/custom_components/customDrawer";
 import Ionicons from "@expo/vector-icons/Ionicons";
-import {styles} from "@/components/custom_components/myStyles";
+import {chosenButtonColor, chosenTextColor, styles} from "@/components/custom_components/myStyles";
 const Drawer = createDrawerNavigator();
 
 
@@ -34,12 +32,12 @@ export default function RootLayout() {
               },styles.drawerMenuTextStyle],
               drawerItemStyle: styles.drawerItemStyle,
               headerStyle: {
-                  backgroundColor: "#2C130E"
+                  backgroundColor: chosenButtonColor
               },
-              headerTintColor: "#E1AD9C",
+              headerTintColor: chosenTextColor,
               headerTitleStyle: styles.headerTextStyle,
-              drawerActiveBackgroundColor: "#2C130E",
-              drawerActiveTintColor: "#E1AD9C",
+              drawerActiveBackgroundColor: chosenButtonColor,
+              drawerActiveTintColor: 'chosenTextColor',
           })}
         >
           <Drawer.Screen

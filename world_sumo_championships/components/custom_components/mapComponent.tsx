@@ -1,7 +1,6 @@
-import React, {useEffect, useRef, useState} from 'react';
-import {Dimensions, View} from 'react-native';
+import React, {useRef, useState} from 'react';
+import {View} from 'react-native';
 import MapView, {Marker, PROVIDER_GOOGLE} from "react-native-maps";
-import {inspect} from "util";
 import {styles} from "@/components/custom_components/myStyles";
 
 export const MyMap = ({markersData, selectedId, setSelectedId}) => {
@@ -36,16 +35,9 @@ export const MyMap = ({markersData, selectedId, setSelectedId}) => {
         }
         else {
             setSelectedId(id);
-            // console.log('Marker pressed:', id);
         }
     }
 
-    useEffect(() => {
-        // console.log("Selected Marker ID:", selectedId);
-        if (mapRef.current) {
-            mapRef.current.animateToRegion(region, 1000); // Wymuś aktualizację mapy
-        }
-    }, [selectedId]);
 
     const handleChangeOfRegion = (newRegion) =>{
         if (newRegion.longitude > mapBoundaries.northEast.longitude){
@@ -67,6 +59,7 @@ export const MyMap = ({markersData, selectedId, setSelectedId}) => {
 
     }
 
+
   return (
       <View style={{padding: 20}}>
           <View style={[styles.mapStyle]}>
@@ -85,6 +78,7 @@ export const MyMap = ({markersData, selectedId, setSelectedId}) => {
                           // title={marker.eventName}
                           onPress={() => handleMarkerPress(marker.id)}
                           pinColor={marker.id === selectedId ? 'tan' : 'red'}
+                          zIndex={marker.id === selectedId ? 1 : 0}
                       />
                   ))}
               </MapView>
