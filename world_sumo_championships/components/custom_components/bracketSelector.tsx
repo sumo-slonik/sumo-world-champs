@@ -4,11 +4,10 @@ import {styles} from "@/components/custom_components/myStyles";
 import {MyButtonGradient} from "@/components/custom_components/buttonGradient";
 
 
-export const LanguageSelection = ({data, onItemPress, selectedData}) =>{
 
-
+export const BracketSelector = ({key, data, onItemPress, selectedData}) =>{
     const renderItem = ({item}) => {
-        const isSelected = item ===selectedData;
+        const isSelected = item === selectedData;
         return(
             <TouchableOpacity
                 onPress={() =>onItemPress(item)}
@@ -22,7 +21,7 @@ export const LanguageSelection = ({data, onItemPress, selectedData}) =>{
     };
 
     return (
-        <View style={{justifyContent: 'center', alignItems: 'center',}}>
+        <View style={{justifyContent: 'center', alignItems: 'center'}}>
             <FlatList
                 data={data}
                 renderItem={renderItem}
@@ -31,5 +30,6 @@ export const LanguageSelection = ({data, onItemPress, selectedData}) =>{
                 horizontal={true}
             />
         </View>
-    );
-};
+    )
+
+}

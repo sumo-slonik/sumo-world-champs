@@ -4,6 +4,7 @@ export const defaultTextColor = 'white'
 export const chosenTextColor = "#E1AD9C"
 export const buttonBackgroundColor = "#931807"
 export const chosenButtonColor ="#2C130E"
+export const gradientColors = ["#ab7668","#e8b3a2"]
 
 const basicTextColor ='black'
 

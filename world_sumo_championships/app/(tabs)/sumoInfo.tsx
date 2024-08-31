@@ -1,6 +1,6 @@
 import {Text, View, ScrollView} from "react-native";
 import * as React from "react";
-import {styles} from "@/components/custom_components/myStyles";
+import {gradientColors, styles} from "@/components/custom_components/myStyles";
 import {rules} from "@/assets/data/eventData";
 import {LinearGradient} from "expo-linear-gradient";
 
@@ -9,7 +9,7 @@ export const SumoInfoScreen =() => {
 
         <ScrollView>
             <LinearGradient
-                colors={["#B87F70","#E1AD9C"]}
+                colors={gradientColors}
                 style={{flex: 1}}
             >
                 <View style={[styles.defaultBackground, {alignItems: 'center', padding: 10}]}>

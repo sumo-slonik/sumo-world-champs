@@ -1,6 +1,6 @@
-import {Text, View, Image} from "react-native";
+import {Text, View, Image, Linking, TouchableOpacity} from "react-native";
 import * as React from "react";
-import {chosenButtonColor, styles} from "@/components/custom_components/myStyles";
+import {chosenButtonColor, gradientColors, styles} from "@/components/custom_components/myStyles";
 import {MyVideo} from "@/components/custom_components/myVideo";
 import {videoLinks} from "@/assets/data/eventData";
 import {useState} from "react";
@@ -16,10 +16,21 @@ export const HomeScreen =() => {
         setSelectedData(data)
     }
 
+
+
+        const handlePress = async () => {
+            const url = 'https://www.instagram.com/sumo_poland';
+            const supported = await Linking.canOpenURL(url);
+
+            if(supported){
+                await Linking.openURL(url);
+            }
+        };
+
     return (
         <View style={[styles.defaultBackground]}>
             <LinearGradient
-                colors={["#B87F70","#E1AD9C"]}
+                colors={gradientColors}
                 style={{flex: 1}}
             >
                 <View style={{flex: 1}}>
@@ -28,7 +39,7 @@ export const HomeScreen =() => {
                 </View>
                 <View style={{alignItems: 'center',justifyContent: 'center', flex: 1}}>
                     <Image
-                        source={require('@/assets/myImages/temporaryPoster.png')}
+                        source={require('@/assets/myImages/Poster.jpg')}
                         style={{
                             height: 255,
                             resizeMode: 'contain',
@@ -37,8 +48,7 @@ export const HomeScreen =() => {
                     />
                 </View>
                 <View style={{alignItems: 'flex-start', justifyContent: 'center', flex: 0.5, padding: 5}}>
-                    <Text>{'Mail: sumo.jupii@pl.com \n'}</Text>
-                    <Text>Instagram: sumo_poland </Text>
+                    <Text onPress={handlePress}>Instagram: sumo_poland </Text>
                     <Image
                         key={1}
                         source={require('@/assets/myImages/PolishSumoFederation.png')}
@@ -53,20 +63,24 @@ export const HomeScreen =() => {
                             borderWidth: 1
                         }}
                     />
-                    <Image
-                        key={2}
-                        source={require('@/assets/myImages/SumoPoland.png')}
-                        style={{ position: 'absolute',
-                            right: 115,
-                            bottom: 20,
-                            width: 100,
-                            height: 100,
-                            flexDirection: 'row',
-                            borderRadius: 50,
-                            borderColor: chosenButtonColor,
-                            borderWidth: 1
+                    <TouchableOpacity
+                        style={{position: 'absolute',
+                        right: 115,
+                        bottom: 20,}}
+                        onPress={handlePress}>
+                        <Image
+                            key={2}
+                            source={require('@/assets/myImages/SumoPoland.png')}
+                            style={{
+                                width: 100,
+                                height: 100,
+                                flexDirection: 'row',
+                                borderRadius: 50,
+                                borderColor: chosenButtonColor,
+                                borderWidth: 1
                     }}
                     />
+                    </TouchableOpacity>
                 </View>
             </LinearGradient>
         </View>

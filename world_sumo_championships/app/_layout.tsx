@@ -5,7 +5,7 @@ import { createDrawerNavigator } from '@react-navigation/drawer';
 import {HomeScreen} from './(tabs)/homePage';
 import {CompetitionInfoScreen} from './(tabs)/competitionInfo';
 import {SumoInfoScreen} from './(tabs)/sumoInfo';
-import {QuizScreen} from './(tabs)/quiz';
+import {BraketsScreen} from './(tabs)/brakets';
 import CustomDrawer from "@/components/custom_components/customDrawer";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import {chosenButtonColor, chosenTextColor, styles} from "@/components/custom_components/myStyles";
@@ -53,8 +53,8 @@ export default function RootLayout() {
                 component={SumoInfoScreen}
           />
           <Drawer.Screen
-                name="Sumo quiz"
-                component={QuizScreen}
+                name="Competition brakets"
+                component={BraketsScreen}
           />
       </Drawer.Navigator>
       </NavigationContainer>
