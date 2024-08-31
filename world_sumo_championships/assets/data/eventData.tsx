@@ -453,4 +453,4 @@ export const rules = "FS Regulations on Refereeing\n" +
     "Supplementary Rules \n" +
     "These regulations shall take effect from April 1, 1997. \n" +
     "Supplementary Rules \n" +
-    "These regulations shall take effect from October 22, 1998."
+    "These regulations shall take effect from October 22, 1998. "
