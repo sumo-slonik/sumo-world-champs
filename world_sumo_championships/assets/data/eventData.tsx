@@ -290,7 +290,8 @@ const w80upS ={
 
 const wOpenS ={
     name: "Open",
-    competitors: ["BRITISH DEEJUA VICTORIA", "EST Liigend Mariette"],
+    competitors: [{country: "BRITISH", name: "DEEJUA VICTORIA", photo:"abc"},
+        {country: "EST", name: "Liigend Mariette", photo: "abc"}],
     results: []
 
 }
@@ -305,7 +306,7 @@ export const gender ={
     woman: [wJunior, wSenior]
 }
 
-export const rules = "FS Regulations on Refereeing\n" +
+export const rules =
     "Chapter 1 The Judges\n" +
     "Article 1 The judges of sumó matches shall be certified judges, selected by the Organizing Committee of the International Sumó Federation.\n" +
     "Article 2 1. A team of judges shall consist of a head judge, a gyóji (referee), and four judges, making a total of six judges. \n" +
@@ -364,7 +365,7 @@ export const rules = "FS Regulations on Refereeing\n" +
     "(7) Biting an opponent \n" +
     "(8) Slapping the opponent's face with an arm outstretched more than a shoulder width \n" +
     "2. The gyóji shall stop the match immediately when kinjite are used in a match. \n" +
-    "Article 16 The gyóji shall determine the winner at the instant a match is over no matter what unexpected way the match has &nished or even \n" +
+    "Article 16 The gyóji shall determine the winner at the instant a match is over no matter what unexpected way the match has finished or even \n" +
     "if it is difficult to give a decision. \n" +
     "Article 17 1. If the head judge or judges have an objection to the gyóji's decision, they shall raise their right hand immediately to lodge a \n" +
     "formal objection. \n" +

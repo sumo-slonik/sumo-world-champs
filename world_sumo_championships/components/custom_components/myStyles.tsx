@@ -47,6 +47,16 @@ export const styles = StyleSheet.create({
         padding: 1,
         elevation: 5
     },
+    photoBackground: {
+        backgroundColor: 'transparent',
+        alignItems: 'center',
+        justifyContent: 'center',
+        borderRadius: 1,
+        borderWidth: 1,
+        borderColor: chosenButtonColor,
+        position: 'relative',
+
+    },
     harmonogramStyle: {
         justifyContent: 'center',
         borderColor: chosenButtonColor,
@@ -85,7 +95,12 @@ export const styles = StyleSheet.create({
         fontFamily: myFont,
         fontWeight: 'bold',
         color: basicTextColor
-    }
+    },
+    flagStyle: {
+        position: 'absolute',
+        bottom: 1,
+        left: 1,
+    },
 
 
 

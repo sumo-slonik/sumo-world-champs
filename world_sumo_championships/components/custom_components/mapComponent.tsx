@@ -9,7 +9,7 @@ export const MyMap = ({markersData, selectedId, setSelectedId}) => {
 
     const mapBoundaries ={
         northEast: {
-            latitude: 51.72,
+            latitude: 51.85,
             longitude: 17.46
         },
         southWest: {
@@ -18,18 +18,18 @@ export const MyMap = ({markersData, selectedId, setSelectedId}) => {
         }
     }
     const [region, setRegion] = useState({
-        latitude: 51.692340,
+        latitude: 51.752340,
         longitude: 17.435673,
-        latitudeDelta: 0.09,
-        longitudeDelta: 0.09,
+        latitudeDelta: 0.22,
+        longitudeDelta: 0.22,
     })
 
-    const minZoomLevel = 0.1;
+    const minZoomLevel = 0.3;
 
     const handleMarkerPress = (id) =>{
-        console.log('Marker id: ',id);
-        console.log('Selected id: ',selectedId);
-        console.log(id === selectedId);
+        // console.log('Marker id: ',id);
+        // console.log('Selected id: ',selectedId);
+        // console.log(id === selectedId);
         if (selectedId === id){
             setSelectedId(null);
         }
@@ -65,6 +65,8 @@ export const MyMap = ({markersData, selectedId, setSelectedId}) => {
           <View style={[styles.mapStyle]}>
               <MapView
                   ref={mapRef}
+                  showsUserLocation={true}
+                  showsMyLocationButton={true}
                   provider={PROVIDER_GOOGLE}
                   style={{width: '100%', height: '100%'}}
                   region={region}

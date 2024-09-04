@@ -13,7 +13,7 @@ export const SumoInfoScreen =() => {
                 style={{flex: 1}}
             >
                 <View style={[styles.defaultBackground, {alignItems: 'center', padding: 10}]}>
-                    <Text style={[styles.menuNameStyle, {padding: 10}]}>Rules of competition</Text>
+                    <Text style={[styles.menuNameStyle, {padding: 10}]}>FS Regulations on Refereeing</Text>
                     <Text style={[styles.normalText, {padding: 20, textAlign: 'justify'}]}> {rules} </Text>
                 </View>
             </LinearGradient>

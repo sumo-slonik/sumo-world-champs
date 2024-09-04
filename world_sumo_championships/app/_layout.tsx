@@ -53,7 +53,7 @@ export default function RootLayout() {
                 component={SumoInfoScreen}
           />
           <Drawer.Screen
-                name="Competition brakets"
+                name="Competitors"
                 component={BraketsScreen}
           />
       </Drawer.Navigator>
