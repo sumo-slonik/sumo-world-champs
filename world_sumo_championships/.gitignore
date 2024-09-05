@@ -20,3 +20,9 @@ app.json
 expo-env.d.ts
 .env
 # @end expo-cli
+
+# amplify
+node_modules
+.amplify
+amplify_outputs*
+amplifyconfiguration*
