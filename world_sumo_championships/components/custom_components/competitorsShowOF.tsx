@@ -3,22 +3,12 @@ import {Dimensions, FlatList, Image, Text, TouchableOpacity, View} from "react-n
 import {styles} from "@/components/custom_components/myStyles";
 import {MyButtonGradient} from "@/components/custom_components/buttonGradient";
 import CountryFlag from "react-native-country-flag";
+import {w80upS} from "@/assets/data/eventData";
 
-export const CompetitorsShowOF = () =>{
+export const CompetitorsShowOF = ({key, data}) =>{
 
-    const images = {
-        'test1': require('@/assets/myImages/test1.jpg'),
-    };
 
-    const data=[{id: '1', country: "gb", name: "DEEJUA VICTORIA", photo: 'test1'},
-        {id: '2', country: "ee", name: "Liigend Mariette", photo: 'test1'},
-        {id: '3', country: "ee", name: "Liigend Mariette", photo: 'test1'},
-        {id: '4', country: "ee", name: "Liigend Mariette", photo: 'test1'},
-        {id: '5', country: "ee", name: "Liigend Mariette", photo: 'test1'},
-        {id: '6', country: "ee", name: "Liigend Mariette", photo: 'test1'}
-    ]
-
-    const ITEM_SIZE = 200; // Preferowana szerokość elementu (w pikselach)
+    const ITEM_SIZE = 200;
     const screenWidth = Dimensions.get('window').width;
     const numColumns = Math.floor(screenWidth / ITEM_SIZE);
     const onlyOne = numColumns===1;
@@ -30,10 +20,10 @@ export const CompetitorsShowOF = () =>{
                     <View style={styles.defaultBackground}>
                         <View style={styles.photoBackground}>
                             <Image
-                                source={images[item.photo]}
+                                source={item.photo}
                                 style={{
                                     width: ITEM_SIZE,
-                                    height: ITEM_SIZE,
+                                    height: ITEM_SIZE+50,
                                 }}
                             />
                         </View>
@@ -50,7 +40,7 @@ export const CompetitorsShowOF = () =>{
                 key={numColumns}
                 data={data}
                 keyExtractor={item => item.id}
-                ListEmptyComponent={<Text> Brak danych</Text>}
+                ListEmptyComponent={<Text style={styles.chapterText}> Choose weight category</Text>}
                 contentContainerStyle={{paddingHorizontal: 10}}
                 numColumns={numColumns}
                 renderItem={renderItem}

@@ -101,6 +101,23 @@ export const styles = StyleSheet.create({
         bottom: 1,
         left: 1,
     },
+    rulesText: {
+        borderRadius:0,
+        fontFamily: myFont,
+        fontWeight: 'bold',
+        color: basicTextColor,
+        padding: 10,
+        textAlign: 'justify'
+    },
+    chapterText: {
+        borderRadius:0,
+        fontFamily: myFont,
+        fontWeight: 'bold',
+        color: basicTextColor,
+        padding: 10,
+        textAlign: 'justify',
+        fontSize:20
+    }
 
 
 

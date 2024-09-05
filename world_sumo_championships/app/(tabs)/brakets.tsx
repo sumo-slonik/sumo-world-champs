@@ -19,23 +19,16 @@ export const BraketsScreen =() => {
     const handleSelectedGender =(newGender) => {
         setSelectedGender(newGender)
         setPossibleAges(gender[selectedGender].map( item => item.name))
-        // console.log(possibleAges)
-        // console.log("tylko gender",selectedGender)
-        // handleSelectedAge(selectedAge)
         setPossibleWeights(gender[newGender].filter(item => item.name ===selectedAge)[0].categories.map(category => category.name))
 
     }
 
     const handleSelectedAge =(newAge) => {
         setSelectedAge(newAge)
-        // console.log("Selected age",selectedAge, "selected gender", selectedGender)
         setPossibleWeights(gender[selectedGender].filter(item => item.name ===newAge)[0].categories.map(category => category.name))
-        // console.log("weights", possibleWeights)
     }
     const handleSelectedWeight =(newWeight) => {
         setSelectedWeight(newWeight)
-        // setPossibleAges(gender[selectedGender].map( item => item.name))
-        // console.log("Selected weight",selectedWeight)
     }
 
     const competitors = gender[selectedGender]
@@ -44,12 +37,11 @@ export const BraketsScreen =() => {
         ?.find(category => category.name === selectedWeight)
         ?.competitors;
 
-    // Użyj useEffect, aby wywołać console.log podczas renderowania
     useEffect(() => {
         console.log("Selected age",selectedAge, "selected gender", selectedGender)
         console.log("Selected weight",selectedWeight)
         console.log("Competitors list:", competitors);
-    }, [competitors]); // Uruchamia się, gdy competitors się zmieni
+    }, [competitors]);
 
 
 
@@ -68,7 +60,7 @@ export const BraketsScreen =() => {
                 <BracketSelector key={selectedGender+selectedAge} data={possibleWeights} onItemPress={handleSelectedWeight} selectedData={selectedWeight}/>
             </View>
             <View style={{flex: 8}}>
-                <CompetitorsShowOF/>
+                <CompetitorsShowOF key={selectedGender+selectedAge+selectedWeight} data={competitors}/>
             </View>
         </LinearGradient>
     );

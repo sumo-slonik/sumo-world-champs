@@ -14,7 +14,14 @@ export const SumoInfoScreen =() => {
             >
                 <View style={[styles.defaultBackground, {alignItems: 'center', padding: 10}]}>
                     <Text style={[styles.menuNameStyle, {padding: 10}]}>FS Regulations on Refereeing</Text>
-                    <Text style={[styles.normalText, {padding: 20, textAlign: 'justify'}]}> {rules} </Text>
+                    <Text style={styles.chapterText}> {rules.chapterOneTitle} </Text>
+                    <Text style={styles.rulesText}> {rules.chapterOneText} </Text>
+                    <Text style={styles.chapterText}> {rules.chapterTwoTitle} </Text>
+                    <Text style={styles.rulesText}> {rules.chapterTwoText} </Text>
+                    <Text style={styles.chapterText}> {rules.chapterThreeTitle} </Text>
+                    <Text style={styles.rulesText}> {rules.chapterThreeText} </Text>
+                    <Text style={styles.chapterText}> {rules.chapterFourTitle} </Text>
+                    <Text style={styles.rulesText}> {rules.chapterFourText} </Text>
                 </View>
             </LinearGradient>
         </ScrollView>

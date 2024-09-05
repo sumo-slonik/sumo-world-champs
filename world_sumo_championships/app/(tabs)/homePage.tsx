@@ -48,7 +48,7 @@ export const HomeScreen =() => {
                     />
                 </View>
                 <View style={{alignItems: 'flex-start', justifyContent: 'center', flex: 0.5, padding: 5}}>
-                    <Text onPress={handlePress}>Instagram: sumo_poland </Text>
+                    <Text onPress={handlePress}>Instagram: sumo_pl </Text>
                     <Image
                         key={1}
                         source={require('@/assets/myImages/PolishSumoFederation.png')}

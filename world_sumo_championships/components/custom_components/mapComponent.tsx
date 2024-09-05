@@ -27,9 +27,6 @@ export const MyMap = ({markersData, selectedId, setSelectedId}) => {
     const minZoomLevel = 0.3;
 
     const handleMarkerPress = (id) =>{
-        // console.log('Marker id: ',id);
-        // console.log('Selected id: ',selectedId);
-        // console.log(id === selectedId);
         if (selectedId === id){
             setSelectedId(null);
         }
@@ -77,7 +74,6 @@ export const MyMap = ({markersData, selectedId, setSelectedId}) => {
                       <Marker
                           key={`${marker.id}-${marker.id === selectedId ? 'active' : 'inactive'}`}
                           coordinate={marker.coordinates}
-                          // title={marker.eventName}
                           onPress={() => handleMarkerPress(marker.id)}
                           pinColor={marker.id === selectedId ? 'tan' : 'red'}
                           zIndex={marker.id === selectedId ? 1 : 0}

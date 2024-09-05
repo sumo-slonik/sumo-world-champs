@@ -1,7 +1,6 @@
 import React from 'react';
 import { FlatList, Text, TouchableOpacity, View,  StyleSheet} from "react-native";
 import {styles} from "@/components/custom_components/myStyles";
-import Svg, { Defs, RadialGradient, Rect, Stop } from 'react-native-svg';
 import {MyButtonGradient} from "@/components/custom_components/buttonGradient";
 
 export const DayChoosingComponent = ({data, onItemPress, selectedData})=> {
